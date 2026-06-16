@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MenuKIDS - Recetas y Planificación en 15 Minutos para Padres Ocupados</title>
+  <meta name="description" content="Planificador de comidas y catálogo de recetas saludables, creativas y listas en 15 minutos para niños escolares. ¡Evita el estrés diario con MenuKIDS!">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <!-- Desktop Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="logo-container">
+        <div class="logo-icon">🍳</div>
+        <div>
+          <h2 class="logo-text">MenuKIDS</h2>
+          <span class="logo-subtitle">Comidas en 15' o Menos</span>
+        </div>
+      </div>
+      
+      <nav>
+        <ul class="nav-menu">
+          <li class="nav-item active" data-target="recipes-view">
+            <button>
+              <svg class="nav-icon" viewBox="0 0 24 24">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+              </svg>
+              <span>Recetas</span>
+            </button>
+          </li>
+          <li class="nav-item" data-target="planner-view">
+            <button>
+              <svg class="nav-icon" viewBox="0 0 24 24">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+              <span>Planificador</span>
+            </button>
+          </li>
+          <li class="nav-item" data-target="fridge-view">
+            <button>
+              <svg class="nav-icon" viewBox="0 0 24 24">
+                <path d="M5 2h14a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+                <line x1="3" y1="14" x2="21" y2="14"/>
+                <line x1="9" y1="5" x2="9" y2="9"/>
+                <line x1="9" y1="15" x2="9" y2="19"/>
+              </svg>
+              <span>En la Nevera</span>
+            </button>
+          </li>
+          <li class="nav-item" id="open-shopping-list-nav">
+            <button>
+              <svg class="nav-icon" viewBox="0 0 24 24">
+                <line x1="8" y1="6" x2="21" y2="6"/>
+                <line x1="8" y1="12" x2="21" y2="12"/>
+                <line x1="8" y1="18" x2="21" y2="18"/>
+                <line x1="3" y1="6" x2="3.01" y2="6"/>
+                <line x1="3" y1="12" x2="3.01" y2="12"/>
+                <line x1="3" y1="18" x2="3.01" y2="18"/>
+              </svg>
+              <span>Lista de Compras</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <p>MenuKIDS v1.0</p>
+        <p>Hecho para papás súper ocupados ❤️</p>
+      </div>
+    </aside>
+
+    <!-- Mobile Bottom Navigation Bar -->
+    <nav class="mobile-nav-bar">
+      <button class="mobile-nav-item active" data-target="recipes-view">
+        <svg class="nav-icon" viewBox="0 0 24 24">
+          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+        </svg>
+        <span>Recetas</span>
+      </button>
+      <button class="mobile-nav-item" data-target="planner-view">
+        <svg class="nav-icon" viewBox="0 0 24 24">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/>
+          <line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+        <span>Plan semanal</span>
+      </button>
+      <button class="mobile-nav-item" data-target="fridge-view">
+        <svg class="nav-icon" viewBox="0 0 24 24">
+          <path d="M5 2h14a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+          <line x1="3" y1="14" x2="21" y2="14"/>
+        </svg>
+        <span>Nevera</span>
+      </button>
+      <button class="mobile-nav-item" id="open-shopping-list-mobile">
+        <svg class="nav-icon" viewBox="0 0 24 24">
+          <line x1="8" y1="6" x2="21" y2="6"/>
+          <line x1="8" y1="12" x2="21" y2="12"/>
+          <line x1="8" y1="18" x2="21" y2="18"/>
+          <line x1="3" y1="6" x2="3.01" y2="6"/>
+        </svg>
+        <span>Lista</span>
+      </button>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      
+      <!-- Top Header Bar -->
+      <header class="header-bar">
+        <div class="welcome-section">
+          <h1 id="dynamic-greeting">¡Hola, superpapá! 👋</h1>
+          <p>¿Qué receta rápida e increíble prepararemos hoy?</p>
+        </div>
+        
+        <!-- Global filter toggles -->
+        <div class="badge-quick-filters">
+          <div class="toggle-switch-container" id="toggle-picky">
+            <span>🤫 Picky Eaters (Camuflaje)</span>
+          </div>
+          <div class="toggle-switch-container" id="toggle-airfryer">
+            <span>💨 Solo Freidora de Aire</span>
+          </div>
+          <div class="toggle-switch-container" id="toggle-zerocook">
+            <span>🧊 Cero Cocción</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- 1. RECIPES VIEW PANEL -->
+      <section id="recipes-view" class="view-panel active">
+        
+        <div class="recipes-filters-bar">
+          <div class="search-input-wrapper">
+            <svg class="search-icon" viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input type="text" id="recipe-search" class="search-input" placeholder="Buscar por plato, ingrediente o palabra clave...">
+          </div>
+          
+          <div class="category-tabs" id="category-tabs-container">
+            <button class="category-tab active" data-category="all">Todas</button>
+            <button class="category-tab" data-category="desayuno">🍳 Desayunos</button>
+            <button class="category-tab" data-category="almuerzo">🍲 Almuerzos</button>
+            <button class="category-tab" data-category="cena">🍝 Cenas</button>
+            <button class="category-tab" data-category="jugos-batidos">🥤 Jugos y Batidos</button>
+            <button class="category-tab" data-category="reposteria">🍪 Repostería Saludable</button>
+          </div>
+        </div>
+
+        <div class="recipes-grid" id="recipes-grid-container">
+          <!-- Rendered dynamically via app.js -->
+        </div>
+      </section>
+
+      <!-- 2. FRIDGE FINDER VIEW PANEL -->
+      <section id="fridge-view" class="view-panel">
+        <div class="section-header">
+          <h2>🧊 ¿Qué hay en la nevera?</h2>
+          <p>Selecciona ingredientes que tengas a mano y te sugeriremos recetas instantáneas sin ir al súper.</p>
+        </div>
+
+        <div class="fridge-view-container">
+          <div class="fridge-selector">
+            <h3>Ingredientes Disponibles <span id="fridge-count" class="selected-count-badge">0 / 5</span></h3>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem;">Selecciona hasta 5 ingredientes:</p>
+            
+            <div class="ingredient-chips-grid" id="popular-ingredients-container">
+              <!-- Rendered dynamically via app.js -->
+            </div>
+
+            <div class="custom-ingredient-section">
+              <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem;">O añade otro ingrediente:</p>
+              <div class="custom-ingredient-bar">
+                <input type="text" id="custom-ingredient-input" placeholder="Ej. manzana, espinaca, queso...">
+                <button class="btn-add-ingredient" id="btn-add-custom-ingredient">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="fridge-results">
+            <div class="fridge-results-header">
+              <h3>Sugerencias Rápidas</h3>
+              <span style="font-size: 0.85rem; color: var(--text-secondary);" id="fridge-match-status">Selecciona ingredientes para buscar</span>
+            </div>
+
+            <div class="matching-recipes-list" id="fridge-matches-container">
+              <div class="empty-fridge-state">
+                <div class="empty-fridge-icon">🥕</div>
+                <p>Marca arriba los ingredientes que tienes en tu nevera para ver recetas compatibles.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. PLANNER VIEW PANEL -->
+      <section id="planner-view" class="view-panel">
+        <div class="section-header">
+          <h2>📅 Planificador Semanal de Comidas</h2>
+          <p>Organiza tu semana culinaria y obtén tu lista de la compra al instante.</p>
+        </div>
+
+        <div class="planner-actions-bar">
+          <button class="btn-planner btn-generate" id="btn-generate-menu">
+            <span>✨ Autogenerar Menú Equilibrado</span>
+          </button>
+          <button class="btn-planner btn-shopping-list" id="btn-show-shopping-list">
+            <span>🛒 Generar Lista de Compras</span>
+          </button>
+        </div>
+
+        <div class="planner-layout">
+          <!-- Calendar Grid Mon-Sun -->
+          <div class="planner-grid" id="planner-days-container">
+            <!-- Rendered dynamically via app.js -->
+          </div>
+
+          <!-- Batch Cooking & Tips Sidebar -->
+          <div class="batch-cooking-sidebar">
+            <div class="batch-card">
+              <h3>⚡ Batch Cooking</h3>
+              <p>Invierte 45 minutos el domingo para tener listos tus días de semana:</p>
+              <ul class="batch-list">
+                <li class="batch-list-item"><strong>Lava y corta:</strong> Deja zanahorias, brócoli y lechuga en recipientes herméticos listos para cocinar.</li>
+                <li class="batch-list-item"><strong>Proteínas listas:</strong> Cocina y desmenuza pechuga de pollo. Dura hasta 4 días y sirve para los wraps y barquitos.</li>
+                <li class="batch-list-item"><strong>Salsas de camuflaje:</strong> Tritura y congela salsa de tomate con calabacín y zanahorias en porciones de cubitos.</li>
+                <li class="batch-list-item"><strong>Plátanos al congelador:</strong> Pela y corta plátanos maduros en rodajas. Imprescindibles para helados e batidos en 5 minutos.</li>
+              </ul>
+            </div>
+            
+            <div class="batch-card" style="background-color: var(--accent-mint-light); border-color: rgba(78, 173, 154, 0.3);">
+              <h3 style="color: #2c6e61;">💡 Consejo de Ahorro</h3>
+              <p style="color: #1e4d44;">Aprovecha los mismos ingredientes básicos. Si planificas Muffins de Brócoli el martes, haz Nuggets de Zanahoria el miércoles: ambos usan huevo y pan rallado.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- RECIPE DETAIL MODAL -->
+  <div class="modal-overlay" id="recipe-detail-modal">
+    <div class="modal-box">
+      <button class="modal-close-btn" id="close-recipe-modal">
+        <svg viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      
+      <div id="recipe-modal-content">
+        <!-- Rendered dynamically via app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SHOPPING LIST MODAL -->
+  <div class="modal-overlay" id="shopping-list-modal">
+    <div class="modal-box shopping-list-box">
+      <button class="modal-close-btn" id="close-shopping-modal">
+        <svg viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+
+      <h2>🛒 Lista de Compras Consolidada</h2>
+      <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.25rem;">Generada automáticamente a partir del plan semanal activo.</p>
+      
+      <div class="shopping-items-container" id="shopping-items-container">
+        <!-- Rendered dynamically via app.js -->
+      </div>
+
+      <div class="shopping-list-actions">
+        <button class="btn-planner btn-secondary" id="btn-copy-shopping">📋 Copiar Lista</button>
+        <button class="btn-planner btn-shopping-list" id="btn-print-shopping">🖨️ Imprimir</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div class="toast-msg" id="toast-message">Mensaje del sistema</div>
+
+  <!-- Scripts -->
+  <script src="js/recipes.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
