@@ -773,9 +773,9 @@ function generateShoppingList() {
     'despensa': { title: '🌾 Despensa y Varios', items: [] }
   };
   
-  const vegFruitKeywords = ['espinaca', 'brócoli', 'plátano', 'fresas', 'manzana', 'aguacate', 'tomate', 'cherry', 'piña', 'mango', 'zanahoria', 'limón', 'naranja', 'lechuga', 'pimiento', 'ajo'];
-  const meatFishKeywords = ['pollo', 'pavo', 'jamón', 'pescado', 'merluza', 'carne'];
-  const dairyKeywords = ['huevo', 'queso', 'yogur', 'mozzarella', 'parmesano', 'cheddar', 'leche', 'crema'];
+  const vegFruitKeywords = ['espinaca', 'brócoli', 'plátano', 'fresas', 'manzana', 'aguacate', 'tomate', 'cherry', 'piña', 'mango', 'zanahoria', 'limón', 'naranja', 'lechuga', 'pimiento', 'ajo', 'hinojo', 'remolacha', 'guayaba', 'kiwi', 'arándanos', 'rábanos', 'colinabo', 'col', 'jícama', 'apio', 'rúcula', 'membrillo', 'chirivía', 'calabaza', 'calabacín', 'higos', 'melón', 'pera', 'durazno', 'albaricoques', 'grosella', 'uvas', 'menta', 'cilantro', 'patata'];
+  const meatFishKeywords = ['pollo', 'pavo', 'jamón', 'pescado', 'merluza', 'carne', 'atún'];
+  const dairyKeywords = ['huevo', 'queso', 'yogur', 'mozzarella', 'parmesano', 'cheddar', 'leche', 'crema', 'quesito'];
   
   Object.values(ingredientsMap).forEach(item => {
     const nameLower = item.name.toLowerCase();
